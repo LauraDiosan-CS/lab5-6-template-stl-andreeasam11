@@ -25,9 +25,9 @@ void Tests::testDomain() {
 
 void Tests::testRepo() {
 	Car e1("aaa", "BT 53 AAA", "liber");
-	Car e2("bbb", "MS 54 AAA", "ocupat");
-	Car e3("ccc", "MS 55 AAA", "liber");
-	Car e4("ddd", "MS 56 AAA", "ocupat");
+	Car e2("bbb", "BT 54 AAA", "ocupat");
+	Car e3("ccc", "BT 55 AAA", "liber");
+	Car e4("ddd", "BT 56 AAA", "ocupat");
 	Repo rep;
 	rep.addElem(e1);
 	rep.addElem(e2);
