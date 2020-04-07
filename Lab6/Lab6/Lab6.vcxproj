@@ -150,12 +150,22 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Repo.cpp" />
+    <ClCompile Include="Service.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="testEntity.cpp" />
+    <ClCompile Include="testRepo.cpp" />
+    <ClCompile Include="testService.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Car.h" />
     <ClInclude Include="Repo.h" />
+    <ClInclude Include="Service.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="testEntity.h" />
+    <ClInclude Include="testRepo.h" />
+    <ClInclude Include="testService.h" />
+    <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -79,7 +79,7 @@ void Car::setNumar(const char* numar) {
 }
 
 void Car::setStatus(const char* status) {
-	if (this->status) {
+	if (this->status&&(this->status=="ocupat"||this->status=="liber")) {
 		delete[] this->status;
 	}
 	this->status = new char[strlen(status) + 1];

@@ -33,7 +33,7 @@ void Tests::testRepo() {
 	rep.addElem(e2);
 	rep.addElem(e3);
 	rep.addElem(e4);
-	assert(rep.getSize() == 4);
+	assert(rep.size() == 4);
 }
 Tests::~Tests() {
 	}
