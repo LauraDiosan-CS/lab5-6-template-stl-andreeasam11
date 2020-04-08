@@ -1,0 +1,12 @@
+﻿  Car.cpp
+  lab6-7.cpp
+  RepoFile.cpp
+C:\Users\Andreea\source\repos\lab6-77\lab6-77\RepoFile.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
+  Repository.cpp
+  Service.cpp
+  stdafx.cpp
+  Tests.cpp
+  UI.cpp
+  Generating Code...
+C:\Users\Andreea\source\repos\lab6-77\lab6-77\Repository.cpp(82): warning C4715: 'Repository::getItemFromPos': not all control paths return a value
+  lab6-77.vcxproj -> C:\Users\Andreea\source\repos\lab6-77\Debug\lab6-77.exe
