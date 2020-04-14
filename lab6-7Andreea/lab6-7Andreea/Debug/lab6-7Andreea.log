@@ -1,0 +1,10 @@
+﻿  Masina.cpp
+  lab6-7Andreea.cpp
+  Service.cpp
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\Service.cpp(26,19): warning C4018: '<': signed/unsigned mismatch
+  TestDomain.cpp
+  TestRepository.cpp
+  TestService.cpp
+  UserInterface.cpp
+  Generating Code...
+  lab6-7Andreea.vcxproj -> C:\Users\Andreea\source\repos\lab6-7Andreea\Debug\lab6-7Andreea.exe
