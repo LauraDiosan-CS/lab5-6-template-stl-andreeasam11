@@ -1,22 +1,24 @@
 #pragma once
-#include <list>
-#include "Masina.h"
-#include "RepositoryFile.h"
-
-using namespace std;
+#include "Car.h"
+#include "RepoFile.h"
+#include "RepoTemplate.h"
 
 class Service {
 private:
-	RepositoryFile<Masina> repo;
-	int locuriParcare, depasesteCapacitatea;
+	int parking;
+	RepoTemplate<Car>& repo;
 public:
-	Service();
-	Service(const RepositoryFile<Masina>&);
-	int addMasina(Masina&);
-	int delMasina(Masina&);
-	void setLocuriParcare(int);
-	void updateMasina(Masina&, Masina&);
-	int getDepasesteCapacitatea();
-	list<Masina> getAll();
+	int number;
+	Service(RepoTemplate<Car>& r) :repo(r) { repo = r; number = 10; };
 	~Service();
+	int addToRepo(Car);
+	int delFromRepo(Car);
+	int updateInRepo(const Car&, Car);
+	bool findElemInRepo(const Car&);
+	Car getItemFromPos(int);
+	list<Car> getFromRepo();
+	int getRepoSize();
+	void setParkingNr(int);
+	int enterParking(Car);
+	int exitParking(Car);
 };

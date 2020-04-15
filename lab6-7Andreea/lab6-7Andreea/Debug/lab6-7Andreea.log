@@ -1,10 +1,16 @@
-﻿  Masina.cpp
-  lab6-7Andreea.cpp
+﻿  lab6-7Andreea.cpp
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\RepoFile.h(59,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\RepoFile.h(57): message : while compiling class template member function 'void RepoFile<Car>::saveToFile(void)'
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\lab6-7Andreea.cpp(28): message : see reference to function template instantiation 'void RepoFile<Car>::saveToFile(void)' being compiled
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\lab6-7Andreea.cpp(24): message : see reference to class template instantiation 'RepoFile<Car>' being compiled
+  RepoFile.cpp
+  RepoTemplate.cpp
   Service.cpp
-C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\Service.cpp(26,19): warning C4018: '<': signed/unsigned mismatch
-  TestDomain.cpp
-  TestRepository.cpp
-  TestService.cpp
-  UserInterface.cpp
+  Tests.cpp
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\RepoFile.h(59,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\RepoFile.h(57): message : while compiling class template member function 'void RepoFile<Car>::saveToFile(void)'
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\Tests.cpp(124): message : see reference to function template instantiation 'void RepoFile<Car>::saveToFile(void)' being compiled
+C:\Users\Andreea\source\repos\lab6-7Andreea\lab6-7Andreea\Tests.cpp(73): message : see reference to class template instantiation 'RepoFile<Car>' being compiled
+  UI.cpp
   Generating Code...
   lab6-7Andreea.vcxproj -> C:\Users\Andreea\source\repos\lab6-7Andreea\Debug\lab6-7Andreea.exe

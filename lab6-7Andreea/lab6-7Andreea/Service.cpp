@@ -1,65 +1,100 @@
+#include "stdafx.h"
 #include "Service.h"
+using namespace std;
 
-Service::Service() {
-	depasesteCapacitatea = 0;
-	locuriParcare = 0;
+Service::~Service() {
 }
 
-Service::Service(const RepositoryFile<Masina>& r) {
-	repo = r;
-	locuriParcare = 0;
-	depasesteCapacitatea = 0;
+void Service::setParkingNr(int nr) {
+	parking = nr;
 }
 
-void Service::setLocuriParcare(int n) {
-	locuriParcare = n;
-}
-
-int Service::addMasina(Masina& m) {
-	if (repo.size() == locuriParcare)
-	{
-		depasesteCapacitatea++;
-		return 1;
+int Service::addToRepo(Car c) {
+	if (strcmp(c.getStatus(), "ocupat") == 0) {
+		int k = 0;
+		for (int i = 0; i < repo.getSize(); i++)
+			if (strcmp(getItemFromPos(i).getStatus(), "ocupat") == 0)
+				k++;
+		if (k >= parking) {
+			number++;
+			return -2;
+		}
 	}
-	list<Masina> lista = repo.getAll();
-	list<Masina>::iterator it = lista.begin();
-	for (int i = 0;i < lista.size();i++)
-	{
-		if (strcmp((*it).getNrInmatriculare(), m.getNrInmatriculare()) == 0)
-			return 2;
-		advance(it, 1);
+	int rez = repo.addElem(c);
+	return rez;
+}
+
+int Service::delFromRepo(Car c) {
+	if (strcmp(c.getStatus(), "liber") == 0) {
+		return repo.delElem(c);
 	}
-	if (strcmp(m.getStatus(), "ocupat") == 0)
-		return 3;
-	m.setStatus("ocupat");
-	repo.addElem(m);
-	repo.saveToFile();
-	depasesteCapacitatea = 0;
+	else
+		return -2;
+
+}
+
+int Service::updateInRepo(const Car& c, Car newC) {
+	if (strcmp(newC.getStatus(), "ocupat") == 0) {
+		int k = 0;
+		for (int i = 0; i < repo.getSize(); i++)
+			if (strcmp(getItemFromPos(i).getStatus(), "ocupat") == 0)
+				k++;
+		if (k >= parking) {
+			number++;
+			return -2;
+		}
+	}
+	repo.updateElem(c, newC);
 	return 0;
 }
 
-list<Masina> Service::getAll() {
+list<Car> Service::getFromRepo() {
 	return repo.getAll();
 }
 
-int Service::getDepasesteCapacitatea() {
-	return depasesteCapacitatea;
+int Service::getRepoSize() {
+	return repo.getSize();
 }
 
-int Service::delMasina(Masina& m) {
-	if (strcmp(m.getStatus(), "liber") == 0)
-		return -1;
-	repo.delElem(m);
-	depasesteCapacitatea = 0;
-	repo.saveToFile();
+bool Service::findElemInRepo(const Car& c) {
+	return repo.findElem(c);
+}
+
+
+Car Service::getItemFromPos(int i) {
+	return repo.getItemFromPos(i);
+}
+
+
+int Service::enterParking(Car c) {
+	if (c.getStatus())
+		if (strcmp(c.getStatus(), "ocupat") == 0) {
+			return -1;
+		}
+		else {
+			int k = 0;
+			for (int i = 0; i < repo.getSize(); i++)
+				if (strcmp(getItemFromPos(i).getStatus(), "ocupat") == 0)
+					k++;
+			if (k >= parking) {
+				number++;
+				return -2;
+			}
+		}
+	Car newC(c.getName(), c.getLicensePlate(), "ocupat");
+	repo.updateElem(c, newC);
+	number = 0;
 	return 0;
 }
 
-void Service::updateMasina(Masina& masinaVeche, Masina& masinaNoua) {
-	repo.updateElem(masinaVeche, masinaNoua);
-	repo.saveToFile();
-}
-
-Service::~Service()
-{
+int Service::exitParking(Car c) {
+	if (strcmp(c.getStatus(), "ocupat") == 0) {
+		Car newC(c.getName(), c.getLicensePlate(), "liber");
+		repo.updateElem(c, newC);
+		number = 0;
+		return 0;
+	}
+	else {
+		return -1;
+	}
 }
