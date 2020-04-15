@@ -7,7 +7,7 @@ using namespace std;
 
 void testRepository() {
 	RepositoryFile<Masina> repo("repositoryTests.txt");
-	Masina car5("sebi", "bt24seb", "liber");
+	Masina car5("Simona", "BT11SIM", "liber");
 	assert(repo.findElem(car5) == 1);
 	repo.delElem(car5);
 	Masina car1("Anaa", "CJ03ANA", "ocupat"), car2("depis", "BT14SEB", "liber"), car3("gigi", "B130GIG", "liber"), car4("Becali", "B13GIG", "ocupat");
